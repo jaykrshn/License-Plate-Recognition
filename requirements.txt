@@ -1,0 +1,16 @@
+pillow>=8.3.2
+validators==0.18.2
+ultralytics
+opencv-python==4.10.0.84
+
+bcrypt==3.2.0
+fastapi==0.115.5
+uvicorn==0.32.0
+SQLAlchemy==2.0.36
+passlib==1.7.4
+psycopg2-binary==2.9.10
+python-jose==3.3.0
+python-multipart==0.0.17
+
+onnxruntime==1.20.1
+fast_plate_ocr==0.3.0
