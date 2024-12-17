@@ -6,8 +6,10 @@ runs
 
 
 
-app/temp/*
-app/trained_model/*
+app/temp/plate.jpg
+app/trained_model/best.onnx
+app/trained_model/yolo11n.pt
+app/trained_model/yolo11s.pt
 lpr_app.db
 
 
