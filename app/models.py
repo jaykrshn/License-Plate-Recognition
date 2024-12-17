@@ -1,5 +1,5 @@
-from data_base import Base
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey
+from .data_base import Base
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 
 
 class Users(Base):
@@ -21,6 +21,5 @@ class Predict(Base):
     id = Column(Integer, primary_key=True, index=True)
     image_path = Column(String)
     model = Column(String)
-    # score = Column(Float)
     result = Column(String)
     owner_id = Column(Integer, ForeignKey('users.id'))

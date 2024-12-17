@@ -5,9 +5,10 @@ yolo11s.pt
 runs
 
 
+
 app/temp/*
 app/trained_model/*
-app/lpr_app.db
+lpr_app.db
 
 
 ##############################

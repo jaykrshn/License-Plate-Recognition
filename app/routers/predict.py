@@ -3,9 +3,9 @@ from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 from fastapi import APIRouter, Depends, HTTPException, Path, File, UploadFile
 from starlette import status
-from inference import read_license_plate
-from models import Predict
-from data_base import SessionLocal
+from ..models import Predict
+from ..inference import read_license_plate
+from ..data_base import SessionLocal
 from .auth import get_current_user
 import numpy as np
 
@@ -59,8 +59,7 @@ async def make_prediction(user: user_dependency, db: db_dependency, predict_requ
     prediction_model = Predict(
         image_path=predict_request.filename,
         model='YOLOv11 + OCR',
-        #score=0.0,  # If you have a specific score, update it here.
-        result=result,  # Assuming result is the class predicted.
+        result=result,  # License plate text
         owner_id=user.get('id')
     )
     db.add(prediction_model)

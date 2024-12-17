@@ -1,0 +1,36 @@
+services:
+  license-plate-reading-db:
+    container_name: license-plate-reading-db
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER:-root}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-secret}
+      POSTGRES_DB: ${DB_DATABASE:-postgres}
+      LANG: en_US.utf8
+      POSTGRES_INITDB_ARGS: "--locale-provider=icu --icu-locale=en-US"
+      TZ: "Europe/Vienna"
+    ports:
+      - 5454:5432
+    volumes:
+      - db-data-lpr:/var/lib/postgresql/data
+
+  license-plate-reading-app:
+    container_name: license-plate-reading-app
+    image: license-plate-reading-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - license-plate-reading-db
+    environment:
+      DB_USER: ${DB_USER:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-secret}
+      DB_DATABASE: ${DB_DATABASE:-postgres}
+      DB_HOST: license-plate-reading-db
+      DB_PORT: ${DB_PORT:-5432}
+    ports:
+      - ${APP_PORT:-8040}:8000
+    restart: on-failure
+
+volumes:
+  db-data-lpr:

@@ -142,7 +142,7 @@ def main(model_path,image_path):
     # # Visualize results
     # visualize_results(original_image, box, score)
 
-    save_path = "temp/plate.jpg"  # Save with a timestamp
+    save_path = "app/temp/plate.jpg"  # Save with a timestamp
     save_cropped_image(original_image, box, save_path)
 
 if __name__ == "__main__":

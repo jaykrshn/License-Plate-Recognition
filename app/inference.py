@@ -1,6 +1,6 @@
-from fast_plate_ocr import ONNXPlateRecognizer
+from fast_plate_ocr import ONNXPlateRecognizer # type: ignore
 import cv2
-from yolo_inference import main
+from .yolo_inference import main
 import os
 
 def save_image(image, output_path):
@@ -27,18 +27,18 @@ def delete_image(output_path):
 
 def read_license_plate(image):
 
-    image_path = "temp/predict_image.jpg"  # Output file path
+    image_path = "app/temp/predict_image.jpg"  # Output file path
     save_image(image,image_path)
 
-    yolo_model= "trained_model/license_best.onnx"
+    yolo_model= "app/trained_model/license_best.onnx"
 
     main(yolo_model,image_path)
 
     delete_image(image_path)
 
     m = ONNXPlateRecognizer('european-plates-mobile-vit-v2-model')
-    print(m.run('temp/plate.jpg')[0])
-    text=str(m.run('temp/plate.jpg')[0])
+    print(m.run('app/temp/plate.jpg')[0])
+    text=str(m.run('app/temp/plate.jpg')[0])
 
     return text
 
