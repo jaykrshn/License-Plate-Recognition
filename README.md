@@ -26,17 +26,16 @@ This project is a **FastAPI-based web application** that detects license plates 
 
 ---
 
----
+
 ## Installation & Setup
 
 ### 1. Clone the Repository
 
-    ```bash
+```bash
    git clone https://github.com/jaykrshn/License-Plate-Recognition.git
    cd License-Plate-Recognition
    ```
----
----
+
 ### 2. Create a Python Environment
 
 Create a new Python environment (recommended using `venv` or `conda`) and install the required dependencies. 
@@ -56,7 +55,7 @@ source .venv/bin/activate
 # Install required libraries
 pip install -r requirements.txt
 ```
----
+
 ---
 ### 3. Train YOLO model for License plate detection
 
@@ -67,9 +66,9 @@ You can refer: [Roboflow dataset](https://universe.roboflow.com/new-workspace-er
 Keep your dataset of yolo format in  folder named 'dataset' in the root 
 
 #### 2. Train model.
-    ```bash
-   python train.py
-   ```
+```bash
+python train.py
+```
 This will creates a runs folder in the root with training results. You can find the trained model in runs/weights directory.
 
 ---
