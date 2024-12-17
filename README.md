@@ -160,9 +160,7 @@ This will:
 
 - Start a PostgreSQL container named **`license-plate-reading-db`** using the `postgres:17-alpine` image.  
 - Start another container named **`license-plate-reading-app`** to run the application code.  
-
 ---
-
 #### 4. Verify the Containers
 
 You can check the running containers with:
@@ -170,8 +168,6 @@ You can check the running containers with:
 ```bash
 docker ps
 ```
----
-
 ---
 ### 5. Access the Application:
    The FastAPI application by default will be available at: (change the port according to that given in .env file)
@@ -199,9 +195,7 @@ docker ps
 ---
 
 That's it! The application should now be running successfully using Docker and PostgreSQL. 🚀
-
 ---
-
 ## Folder Structure
 
 ```
