@@ -14,6 +14,7 @@ docker-compose.*.yaml
 test
 testdb
 lpr-app.db
+train.py
 
 app/trained_model/yolo11n.pt
 app/trained_model/yolo11s.pt
