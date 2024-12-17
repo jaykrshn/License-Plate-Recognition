@@ -11,13 +11,11 @@ db_host = os.getenv("DB_HOST", 'db')
 db_port = os.getenv("DB_PORT", 5432)
 
 
-# SQLALCHEMY_DATABASE_URL = 'postgresql://root:secret@asl-classification-db:5432/postgres'
+# SQLALCHEMY_DATABASE_URL = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+# engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-
-# SQLALCHEMY_DATABASE_URL = 'sqlite:///./lpr_app.db'
-# engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})    # for sqlite
+SQLALCHEMY_DATABASE_URL = 'sqlite:///./lpr_app.db'
+engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={'check_same_thread': False})    # for sqlite
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
