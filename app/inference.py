@@ -30,7 +30,7 @@ def read_license_plate(image):
     image_path = "app/temp/predict_image.jpg"  # Output file path
     save_image(image,image_path)
 
-    yolo_model= "app/trained_model/license_best.onnx"
+    yolo_model= "app/trained_model/best.onnx"
 
     main(yolo_model,image_path)
 
