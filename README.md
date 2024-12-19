@@ -202,7 +202,7 @@ That's it! The application should now be running successfully using Docker and P
 ├── app/                           # Application source code
 │   ├── trained_model/             # Directory to store machine learning models
 │       ├── best.onnx              # ONNX file containing the trained YOLO model
-│   ├── temp/                      # Directory to store temporary files (adjusted folder name for clarity)
+│   ├── temp/                      # Directory to store temporary files
 │   ├── routers/                   # Directory containing API route definitions for various functionalities
 │       ├── admin.py               # Routes for admin-related operations (e.g., managing system settings)
 │       ├── auth.py                # Routes for authentication and authorization (e.g., login, JWT token)
