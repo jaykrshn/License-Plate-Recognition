@@ -200,46 +200,44 @@ That's it! The application should now be running successfully using Docker and P
 
 ```
 ├── app/                           # Application source code
-│   ├── trained_model/             # Pre-trained machine learning models
-│       ├── best.onnx              # ONNX file containing the trained yolo model
-│   ├── trained_model/             # To store temporary files
-│   ├── routers/                   # API route definitions for different functionalities
-│       ├── admin.py               # Routes for admin-related operations
-│       ├── auth.py                # Routes for authentication and authorization
-│       ├── predict.py             # Routes for LPR predictions
-│       ├── users.py               # Routes for user management
+│   ├── trained_model/             # Directory to store machine learning models
+│       ├── best.onnx              # ONNX file containing the trained YOLO model
+│   ├── temp/                      # Directory to store temporary files (adjusted folder name for clarity)
+│   ├── routers/                   # Directory containing API route definitions for various functionalities
+│       ├── admin.py               # Routes for admin-related operations (e.g., managing system settings)
+│       ├── auth.py                # Routes for authentication and authorization (e.g., login, JWT token)
+│       ├── predict.py             # Routes for License Plate Recognition (LPR) predictions
+│       ├── users.py               # Routes for user management (e.g., CRUD operations on users)
 │   ├── main.py                    # Entry point for the FastAPI application
-│   ├── database.py                # Database connection and ORM engine configuration
+│   ├── database.py                # Database connection setup and ORM engine configuration
 │   ├── models.py                  # SQLAlchemy models for database tables
-│   ├── inference.py               # To perform inference on the given image
-│   ├── yolo_inference.py          # To perform object detection using yolo model
+│   ├── inference.py               # Script to perform inference on input images
+│   ├── yolo_inference.py          # Script to perform object detection using the YOLO model
 │
-├── dataset/                       # Datasets used for training the model
-│   ├── train
-│       ├── images
-│       ├── labels
-│   ├── valid
-│       ├── images
-│       ├── labels
-│   ├── test
-│       ├── images
-│       ├── labels
-│   ├── data.yml
+├── dataset/                       # Directory containing datasets used for model training and validation
+│   ├── train                      # Training dataset
+│       ├── images                 # Training images
+│       ├── labels                 # Corresponding labels for training images
+│   ├── valid                      # Validation dataset
+│       ├── images                 # Validation images
+│       ├── labels                 # Corresponding labels for validation images
+│   ├── test                       # Test dataset
+│       ├── images                 # Test images
+│       ├── labels                 # Corresponding labels for test images
+│   ├── data.yml                   # YOLO-specific configuration file specifying dataset paths
 │
-├── Dockerfile                     # Instructions to build the Docker container for the application
-├── docker-compose.yml             # Configuration to manage multi-container Docker applications
-├── .dockerignore                  # Files and directories to exclude during Docker image build
-├── .env
+├── Dockerfile                     # Docker instructions to build the container for the FastAPI application
+├── docker-compose.yml             # Docker Compose configuration for managing multi-container setups
+├── .dockerignore                  # Specifies files and directories to exclude during Docker image build
+├── .env                           # Environment variables for application configuration
 │
-├── requirements.txt               # List of required Python packages for production
+├── requirements.txt               # List of required Python packages for production environment
 ├── requirements.dev.txt           # List of required Python packages for development and testing
 │
-└── README.md                      # Project documentation and setup instructions
+└── README.md                      # Project documentation, setup instructions, and usage guide
 
 ```
 
 ---
-
-
 
 **Happy Coding!** 💡
